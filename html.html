@@ -1,0 +1,936 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mustapha Saqr</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+/* Move the @import rules to the top */
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Vinyl&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+ /* Importing the font at the top */
+ @import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Indie+Flower&display=swap');
+
+ body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.2;
+    margin: 0;
+    padding: 0;
+
+    /* Background gradient using the provided color palette */
+    background: linear-gradient(135deg, 
+        #163a4b, /* Dark shade */
+        #656b7c, /* Muted tone */
+        #dabbbb, /* Soft tone */
+        #0b3040, /* Deep teal */
+        #10abb2, /* Bright teal */
+        #32596b, /* Cool blue */
+        #28757f, /* Teal */
+        #264456, /* Dark blue-green */
+        #9b7a87, /* Muted pink */
+        #43637c, /* Muted teal */
+        #294b64, /* Dark teal */
+        #6191a5, /* Soft blue */
+        #394756, /* Dark blue */
+        #194454, /* Dark cyan */
+        #a1959e, /* Light gray */
+        #041b2c, /* Deep dark shade */
+        #173c54, /* Deep teal */
+        #a28d8b, /* Light brownish gray */
+        #04242c, /* Very dark teal */
+        #95646c /* Warm earthy tone */
+    );
+    background-size: 400% 400%; /* Smooth gradient transition */
+    animation: gradientAnimation 20s ease infinite; /* Continuous gradient animation */
+    
+    /* Text properties */
+    color: #d2fae1; /* Light color for text to ensure readability */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4); /* Stronger text shadow for contrast */
+    min-height: 100vh;
+}
+
+/* Animation for continuous gradient */
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+
+
+
+
+/* Hero Section */
+.hero {
+    color: white;
+    padding: 100px 0;
+    text-align: right;
+    height: 80vh; /* Full viewport height */
+    display: flex; /* Use flexbox for centering content */
+    justify-content: flex-end; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    position: relative;
+    overflow: hidden;
+    opacity: 0;
+    animation: appear 2s ease-out forwards;
+
+    /* Background Properties */
+    background: url(img/html-css-collage-concept.jpg) no-repeat center center/cover; /* Background image */
+    filter: brightness(75%); /* Reduce image brightness to 75% */
+}
+
+
+/* Square image on the right with 4D effect */
+.hero .square-image {
+    width: 363px; /* Set the width of the square */
+    height: 492px; /* Set the height of the square */
+    position: absolute; /* Position it independently of other elements */
+    left: 70px; /* Distance from the left side */
+    top: 50%; /* Center vertically */
+    transform: translateY(-50%) rotateX(10deg) rotateY(10deg) scale(1); /* 3D effect and scaling */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4); /* Shadow for depth */
+    perspective: 800px; /* Perspective for the 3D effect */
+    animation: rotateImage 6s infinite alternate; /* Rotate and animate the 4D effect */
+}
+
+/* Image inside the square */
+/* Image inside the square (real size, not fitted) */
+.hero .square-image img {
+    width: auto; /* Maintain the original width */
+    height: auto; /* Maintain the original height */
+    max-width: 100%; /* Ensure the image doesn't exceed the square's width */
+    max-height: 100%; /* Ensure the image doesn't exceed the square's height */
+    position: absolute; /* Allow for precise centering */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust position to fully center */
+    border-radius: 8px; /* Rounded corners for the square */
+    box-shadow: 6px 0px 13px 14px rgba(43, 244, 255, 0.4); /* White shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+    z-index: 1; /* Ensure the image stays above the background */
+}
+
+/* Hover effect to simulate 3D zoom */
+.hero .square-image:hover img {
+    transform: translate(-50%, -50%) scale(1.1); /* Slight zoom for interactive effect */
+    box-shadow: 0 0 30px 15px rgba(255, 255, 255, 1); /* Bigger white shadow on hover */
+}
+
+
+/* Keyframes for rotating the square image to simulate 4D movement */
+@keyframes rotateImage {
+    0% {
+        transform: translateY(-50%) rotateX(10deg) rotateY(10deg) scale(1);
+    }
+    25% {
+        transform: translateY(-50%) rotateX(30deg) rotateY(30deg) scale(1.05);
+    }
+    50% {
+        transform: translateY(-50%) rotateX(0deg) rotateY(0deg) scale(1.1);
+    }
+    75% {
+        transform: translateY(-50%) rotateX(-30deg) rotateY(-30deg) scale(1.05);
+    }
+    100% {
+        transform: translateY(-50%) rotateX(10deg) rotateY(10deg) scale(1);
+    }
+}
+
+@keyframes appear {
+    0% {
+        opacity: 0;
+        filter: brightness(0%);
+    }
+    100% {
+        opacity: 1;
+        filter: brightness(100%);
+    }
+}
+
+
+.hero-img {
+    width: 150px; /* Adjust size as needed */
+    height: 150px; /* Adjust size as needed */
+    border-radius: 50%; /* Make it circular, optional */
+    margin-bottom: 20px; /* Space between the image and the text */
+}
+
+        .hero h1 {
+            font-size: 5rem;
+    color: #10abb2; /* Keep the main text color */
+    font-family: "Rubik Vinyl", serif;
+    text-shadow: 
+        1px 1px 0px #dabbbb, /* Light shadow */
+        2px 2px 0px #9abb4a, /* Slightly deeper shadow */
+        3px 3px 0px #5a9f45, /* Deeper shadow */
+        4px 4px 0px #9abb4a, /* Even deeper shadow */
+        5px 5px 5px rgba(0, 0, 0, 0.5); /* Final shadow with blur for depth */
+            
+}
+
+            
+        .hero p {
+            font-family: "Indie Flower", serif;
+            font-size: 2rem;
+            color: rgb(255, 255, 255);
+            overflow: hidden; /* Hide the text until it's revealed */
+            display: inline-block;
+            white-space: nowrap; /* Prevent text from wrapping */
+            border-right: 4px solid black; /* Cursor effect */
+            width: 0; /* Start with no visible text */
+            animation: typing 5s steps(30) 1s forwards, blink 0.75s step-end infinite; /* Typing and blinking cursor */
+        }
+
+        @keyframes typing {
+            to {
+                width: 100%;
+            }
+        }
+
+        @keyframes blink {
+            50% {
+                border-color: transparent; /* Blink effect */
+            }
+        }
+
+        /* Additional styling for the Hero section */
+        .hero {
+            position: relative;
+            text-align: center;
+            padding: 100px 0;
+        }
+
+       
+/* Styling the h1 for "Mustapha Saqr" with the new font */
+.hero h1 {
+    font-family: 'Black Ops One', sans-serif; /* Applying the new font */
+    font-size: 3rem; /* Adjust the size as needed */
+    color: #feffff;
+    text-shadow: 
+        1px 1px 0px #b1aa6d, 
+        2px 2px 0px #9abb4a, 
+        3px 3px 0px #5a9f45, 
+        4px 4px 0px #9abb4a, 
+        5px 5px 5px rgba(0, 0, 0, 0.5);
+}
+
+       
+
+        .square-image img {
+            width: 150px;
+            height: 150px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+    
+        .about-container {
+    position: relative; /* Ensure proper positioning for the pseudo-element */
+   
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: auto;
+    max-width: none;
+    height: auto;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2), -4px -4px 10px rgba(255, 255, 255, 0.2);
+    transform: translateZ(0);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin: 0 auto;
+    overflow: hidden;
+    z-index: 0; /* Base stacking context */
+}
+
+.about-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Black overlay with 50% opacity */
+    z-index: 1; /* Place the overlay below the text */
+    pointer-events: none; /* Allow interactions to pass through */
+}
+
+.about-container > * {
+    position: relative; /* Ensure the content sits above the overlay */
+    z-index: 2; /* Ensure the text appears above the overlay */
+}
+
+.about-title {
+    color: #ffffff; /* White color for the title */
+    font-size: 2.5rem; /* Adjust font size for the title */
+    text-align: center; /* Center align the title */
+}
+
+.about-text {
+    color: #ffffff; /* White color for the text */
+    font-size: 1.2rem; /* Adjust font size for the text */
+    line-height: 1.6; /* Adjust line spacing for better readability */
+    text-align: justify; /* Justify the text for a cleaner look */
+}
+
+
+ 
+
+
+/* Center the container within the skills section */
+
+
+h2.my.skills {
+    /* color: green; */
+    font-size: 3rem;
+    color: #ffffff;
+    font-weight: bold;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+#skills {
+    display: flex;
+    justify-content: center; /* Center the container horizontally */
+    align-items: center;     /* Center the container vertically */
+   
+    padding: 5px 0;          /* Add 50px of space at the top and bottom */
+    box-sizing: border-box;   /* Include padding in the section dimensions */
+}
+
+/* Optional: Style the section title for better appearance */
+.section-title {
+    font-size: 2.8rem;
+    color: #ffffff;
+    font-weight: bold;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+    letter-spacing: 17px;
+    margin-top: auto;
+}
+
+/* Skill Categories */
+.skill-category {
+    background-color: #dabbbb;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15), 0 10px 20px rgba(0, 0, 0, 0.1); /* Enhanced shadow */
+    margin: 15px 0; /* Add space between categories */
+    transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition for 3D effect */
+}
+
+/* Hover effect */
+.skill-category:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25), 0 15px 30px rgba(0, 0, 0, 0.15); /* Stronger shadow on hover */
+}
+
+
+/* Hide category list by default */
+.category-list {
+    display: none;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    transition: all 0.3s ease;
+   
+}
+
+/* Show category list when the "show" class is added */
+.category-list.show {
+    display: block;
+}
+ 
+/* Set text color for category-title to green */
+.category-title {
+    color: #04242c;
+    font-size: larger;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    cursor: pointer; /* Add a pointer cursor for better UX */
+     }
+
+/* Set text color for category-list to red */
+.category-list {
+    list-style: none; /* Remove default bullets */
+    padding-left: 15px; /* Adjust padding to align text */
+}
+
+.category-list li {
+    color: #041b2c;
+    margin: 5px 0; /* Add spacing between list items */
+    position: relative; /* Ensure proper positioning for the pseudo-element */
+    padding-left: 20px; /* Reduce space for the circle and text */
+}
+
+.category-list li::before {
+    content: ''; /* Empty content for the shape */
+    display: inline-block;
+    width: 10px; /* Width of the circle or square */
+    height: 10px; /* Height of the circle or square */
+    background-color: #041b2c; /* Color of the circle or square */
+    border-radius: 50%; /* Change to 0 for a square */
+    position: absolute;
+    left: 5px; /* Reduce the gap between the circle and text */
+    top: 50%;
+    transform: translateY(-50%); /* Center the shape vertically */
+}
+
+
+/* Optional: Change the category-title color on hover for interactivity */
+.category-title:hover {
+    color: #6191a5;
+}
+
+
+/* 3D effect on hover */
+.skill-category:hover {
+    transform: rotateY(10deg) rotateX(10deg); /* Rotate on hover for 3D look */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhance shadow for 3D depth */
+}
+
+/* Center the categories as well */
+#skills .row {
+    #skills .row {
+    display: flex
+;
+    flex-wrap: wrap;
+    /* gap: 14px; */
+    align-items: center;
+    align-content: stretch;
+    flex-direction: row;
+}
+}
+
+/* For better spacing and responsiveness */
+.skill-category {
+    flex: 0 0 30%; /* Set the width of each skill category to 30% */
+    max-width: 30%; /* Ensure it doesn't stretch beyond this */
+    transform-style: preserve-3d; /* Ensure 3D transformations are preserved */
+}
+
+@media (max-width: 768px) {
+    .skill-category {
+        flex: 0 0 45%; /* On medium screens, set the width to 45% */
+    }
+}
+
+@media (max-width: 480px) {
+    .skill-category {
+        flex: 0 0 100%; /* On small screens, set the width to 100% */
+    }
+}
+
+
+
+
+
+
+.hero .container {
+    max-width: 50%; /* Limit the container width for readability */
+    margin: 60px;
+    text-align: center; /* Optional: Align text inside the container to the right */
+    padding: 20px;
+    border-radius: 10px; /* Optional: Rounded corners for styling */
+    
+}
+
+.card-title {
+    font-size: 1rem; /* Set font size to 1rem */
+    font-weight: bold; /* Optional: Keep it bold for emphasis */
+    margin-bottom: 10px; /* Add some spacing below the title */
+    color: #041b2c; /* Optional: Set a specific color */
+}
+
+
+
+.card {
+    border: none;
+    box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.2), -6px -6px 15px rgba(255, 255, 255, 0.1); /* 3D outer shadow */
+    margin-bottom: 20px;
+    border-radius: 10px;
+    transform: translateZ(0); /* Enable 3D transformation */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+    }
+
+/* Interactive hover effect for cards */
+.card:hover {
+    transform: translateY(-10px) scale(1.03); /* Slight lift and scaling */
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.4), -10px -10px 20px rgba(255, 255, 255, 0.2); /* Enhanced shadow */
+}
+
+/* Image style inside the card */
+.card img {
+    border-radius: 10px 10px 0 0; /* Rounded corners for the top */
+    width: 100%;
+    box-shadow: inset 3px 3px 6px rgba(0, 0, 0, 0.3), inset -3px -3px 6px rgba(255, 255, 255, 0.1); /* Inner shadow for depth */
+}
+
+/* Card body style */
+.card-body {
+    padding: 15px;
+    background: linear-gradient(145deg, #28757f, #10abb2); /* Gradient background */
+    border-radius: 0 0 10px 10px; /* Rounded corners for the bottom */
+    box-shadow: inset 4px 4px 10px rgba(0, 0, 0, 0.3), inset -4px -4px 10px rgba(255, 255, 255, 0.1); /* Inner shadows */
+}
+
+/* Custom Button */
+.btn-custom {
+    background-color: #10abb2; /* Deep, natural green for a professional look */
+    color: white; /* High contrast for text readability */
+    border: none;
+    padding: 12px 24px; /* Slightly larger padding for a premium feel */
+    text-decoration: none;
+    border-radius: 8px; /* More rounded corners for a modern style */
+    font-weight: 700; /* Make text bold for better visibility */
+    font-size: 1rem; /* Adjust font size for better readability */
+    box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.3), -6px -6px 15px rgba(255, 255, 255, 0.2); /* Enhanced 3D shadow for depth */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease; /* Smooth, gradual transitions */
+    cursor: pointer; /* Pointer cursor for better user interaction */
+    display: inline-block; /* Ensure the button doesn't stretch in container */
+    text-align: center;
+}
+
+/* Button hover effect */
+.btn-custom:hover {
+    background-color: #10abb2; /* Slightly lighter shade for hover effect */
+    transform: translateY(-4px); /* Slightly higher lift for an interactive feel */
+    box-shadow: 8px 8px 18px rgba(0, 0, 0, 0.4), -8px -8px 18px rgba(255, 255, 255, 0.25); /* Deeper shadow for hover state */
+}
+
+/* Optional: Active state */
+.btn-custom:active {
+    background-color: #10abb2; /* Slightly darker shade for pressed state */
+    transform: translateY(2px); /* Lower button slightly to mimic pressing */
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2), -3px -3px 10px rgba(255, 255, 255, 0.1); /* Reduced shadow for active state */
+}
+
+/* Style for the "My Projects" Heading */
+#projects h2 {
+    display: inline-block; /* Ensures the box adjusts to the text width */
+    background: linear-gradient(145deg, #041b2c, #6191a5); /* Vibrant gradient */
+    color: #fff; /* Text color */
+    padding: 15px 30px; /* Padding for spacing */
+    font-size: 2.5rem; /* Font size */
+    font-weight: bold; /* Make text bold */
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.3), -8px -8px 15px rgba(255, 255, 255, 0.2); /* HD shadow effect */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Add depth to text */
+    margin: 20px auto; /* Centering with top and bottom margin */
+}
+
+#projects {
+    display: flex
+;
+    justify-content: center;
+    align-items: center;
+}
+
+#contact {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Contact Section */
+.contact-section {
+    background-image: url(img/call.png); /* Gradient background for a modern look */
+    background-size: cover; /* Ensures the image fills the container */
+    background-position: center center; /* Centers the image within the container */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+     padding: 40px 0;
+    height: auto; /* Adjusted for flexible height */
+}
+
+
+/* Section Title */
+.section-title {
+    font-size: 3rem;
+    color: #a76a97;
+    font-weight: bold;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+    letter-spacing: 1px; /* Added letter spacing for a more modern feel */
+}
+
+/* Description and Contact Info */
+.description {
+    font-size: 1.3rem;
+    color: #ffffff;
+    margin-bottom: 20px;
+    line-height: 1.6; /* Added line height for better readability */
+}
+
+.contact-info {
+    font-size: 1.2rem;
+    color: #ffffff;
+    margin-bottom: 15px;
+}
+
+/* Links */
+.contact-link {
+    color: #b55fa0;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+    padding-bottom: 3px; /* Subtle bottom padding for hover underline effect */
+}
+
+.contact-link:hover {
+    color: #90fbe8;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+/* Footer */
+.footer {
+    background: #4c9499
+    ;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    font-size: .3rem;
+     
+    }
+
+.footer p {
+    margin: 0;
+    font-size: 1rem;
+    text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 2.2rem;
+    }
+
+    .description {
+        font-size: 1.1rem;
+    }
+
+    .contact-info {
+        font-size: 1rem;
+    }
+
+    .footer p {
+        font-size: 0.9rem;
+    }
+
+}
+
+        .skills-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .skills-list li {
+            margin: 5px 0;
+        }
+
+        .container {
+            width: 92%;
+            margin-top: 40px  ;
+            
+        }
+
+        .row {
+            display: flex
+;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+        .col-md-4 {
+            width: 32%;
+            margin-bottom: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .col-md-4 {
+                width: 100%;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+            
+           
+    </style>
+</head>
+
+<body>
+        <!-- Hero Section -->
+        <header class="hero">
+            <div class="container">
+                <h1>Mustapha Saqr</h1> <!-- Updated font style applied here -->
+                <p>Junior Full Stack Web Developer</p>
+                <div class="hero-buttons">
+                    <a href="#about" class="btn-custom">About Me</a>
+                    <a href="#projects" class="btn-custom">My Projects</a>
+                    <a href="#contact" class="btn-custom">Contact Me</a>
+                </div>
+        </div>
+        <!-- Square Image with 4D Effect -->
+        <div class="square-image">
+            <img src="img/sasa2.png" alt="Mustapha Saqr">
+        </div> 
+        </header>
+
+        <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        const heroLink = document.querySelector('.hero-link');
+        if (heroLink) {
+            heroLink.addEventListener('click', function (e) {
+                e.preventDefault(); // Prevent the default anchor behavior
+                const targetSection = document.querySelector('#about');
+                
+                // Scroll smoothly to the "about" section
+                if (targetSection) {
+                    targetSection.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        }
+      });
+        </script>
+
+
+
+
+     <!-- About Section -->
+        <section id="about" class="py-5">
+     <div class="container text-center about-container">
+        <h2 class="about-title">About Me</h2>
+        <p class="mt-3 about-text">Junior Full Stack Web Developer with expertise in C#, SQL Server, T-SQL, and React. Skilled in building scalable applications using three-tier architecture, implementing RESTful APIs, and managing authentication and authorization. Proficient in asynchronous programming and applying SOLID principles. Fluent in English with strong communication and problem-solving abilities.</div>
+        </section>
+
+
+      <!-- Skills Section -->
+      <div id="divskills" class="divskills">
+       <section id="skills" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="my skills">My Skills</h2>
+            <div class="row">
+                <!-- Skill Categories -->
+                <div class="col-md-4 skill-category">
+                    <h4 class="category-title" onclick="toggleList('foundation')">Foundation</h4>
+                    <ul id="foundation" class="category-list">
+                        <li>Computer Architecture</li>
+                        <li>Networking Basics</li>
+                        <li>Data Structures</li>
+                        <li>Algorithm Techniques</li>
+                        <li>Object-Oriented Programming (OOP) in C++ and C#</li>
+                        <li>along with knowledge of some design patterns</li>
+                    </ul>
+                </div>
+                <div class="col-md-4 skill-category">
+                    <h4 class="category-title" onclick="toggleList('database')">Database</h4>
+                    <ul id="database" class="category-list">
+                        <li>SQL</li>
+                        <li>T-SQL</li>
+                        <li>Database Design</li>
+                        <li>Normalization</li>
+                        <li>ADO.NET</li>
+                        <li>CRUD Operations</li>
+                    </ul>
+                </div>
+                <div class="col-md-4 skill-category">
+                    <h4 class="category-title" onclick="toggleList('backend')">Back-End</h4>
+                    <ul id="backend" class="category-list">
+                        <li>Proficient in C#</li>
+                        <li>.NET Framework</li>
+                        <li>.NET Core</li>
+                        <li>DTO</li>
+                        <li>Serialization and Deserialization</li>
+                        <li>Cryptography</li>
+                        <li>Multithreading</li>
+                        <li>Asynchronous Programming</li>
+                        <li>SOLID Principles</li>
+                                        </ul>
+                </div>
+                <div class="col-md-4 skill-category">
+                    <h4 class="category-title" onclick="toggleList('api')">API</h4>
+                    <ul id="api" class="category-list">
+                        <li>RESTful APIs</li>
+                        <li>Authentication</li>
+                        <li>Authorization</li>
+                        <li>Token Management</li>
+                        <li>JSON</li>
+                        <li>Implementing Filters</li>
+                    </ul>
+                </div>
+                <div class="col-md-4 skill-category">
+                    <h4 class="category-title" onclick="toggleList('web')">Web Development</h4>
+                    <ul id="web" class="category-list">
+                        <li>Responsive Design</li>
+                        <li>User Feedback</li>
+                        <li>Form Validations</li>
+                        <li>HTML5</li>
+                        <li>CSS3</li>
+                        <li>Bootstrap</li>
+                        <li>JavaScript (JS)</li>
+                        <li>React</li>
+                        <li>Redux</li>
+                        <li>Next.js</li>
+                    </ul>
+                </div>
+                
+                <div class="col-md-4 skill-category">
+                    <h4 class="category-title" onclick="toggleList('softskills')">Soft Skills</h4>
+                    <ul id="softskills" class="category-list">
+                        <li>Adaptability</li>
+                        <li>Effective Communication</li>
+                        <li>Problem-Solving</li>
+                        <li>Team Collaboration</li>
+                        <li>Time Management</li>
+                        <li>Critical Thinking</li>
+                        <li>Attention to Detail</li>
+                        <li>Creative Thinking</li>
+                        <li>Fast Learner</li>
+                        <li>Strong Work Ethic</li>
+                    </ul>
+                </div>
+                <div class="col-md-4 skill-category">
+                    <h4 class="category-title" onclick="toggleList('other')">Other Tools</h4>
+                    <ul id="other" class="category-list">
+                        <li>Git</li>
+                        <li>GitHub</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+      </section>
+        </div>
+
+      <script>
+    function toggleList(id) {
+    const list = document.getElementById(id);
+    // Toggle the "show" class to show/hide the list
+    list.classList.toggle('show');
+}
+
+     </script>
+    
+
+      <!-- Projects Section -->
+        <section id="projects" class="py-5">
+       <div class="container">
+        <h2 class="text-center">My Projects</h2>
+        <div class="row mt-4">
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="img/BUY.jpg" alt="E-Commerce Project">
+                    <div class="card-body">
+                        <h5 class="card-title"> E-Commerce Platform (In Progress):</h5>
+                        <p class="card-text">Developing a feature-rich e-commerce application using React, implementing a secure and efficient back-end using .NET Core and SQL Server, focusing on creating a responsive, interactive user interface with optimized API integrations.
+                        </p>
+                        <a href="https://github.com/mustaphasaqr/E-Commerce-Platform" class="btn-custom">View on GitHub</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="img/Driving License2.jpg" alt="Driving License Project">
+                    <div class="card-body">
+                        <h5 class="card-title">Driving License Project</h5>
+                        <p class="card-text">Developed a desktop application for a driving license department using C#, SQL Server, and ADO.NET, implementing a three-tier architecture for scalability and maintainability, applying OOP principles, and optimizing SQL queries for improved performance.</p>
+                        <a href="https://github.com/mustaphasaqr/Driving-License-Department-Application.git" class="btn-custom">View on GitHub</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="img/html2.jpg" alt="HTML&CSS Website">
+                    <div class="card-body">
+                        <h5 class="card-title">HTML&CSS Website</h5>
+                        <p class="card-text">Created a fully responsive website showcasing modern design principles, focusing on accessibility, clean code practices, and cross-browser compatibility.
+                        </p>
+                        <a href="https://github.com/mustaphasaqr/html-css.git" class="btn-custom">View on GitHub</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="img/Bank2.png" alt="Bank Project">
+                    <div class="card-body">
+                        <h5 class="card-title">Bank Project</h5>
+                        <p class="card-text">A console-based desktop banking application that manages user accounts, transactions, and balance updates.</p>
+                        <a href="https://github.com/mustaphasaqr/Bank-Project" class="btn-custom">View on GitHub</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="img/Calculator2.png" alt="Desktop Calculator Project">
+                    <div class="card-body">
+                        <h5 class="card-title">Desktop Calculator Project</h5>
+                        <p class="card-text">Calculator application with efficient logic for various mathematical operations using C#.</p>
+                        <a href="https://github.com/mustaphasaqr/Desktop-Calculator" class="btn-custom">View on GitHub</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Next project to add -->
+            <div class="col-md-4">
+                <div class="card">
+                    <!-- <img src="img/ .png" alt="name">
+                    <div class="card-body">
+                        <h5 class="card-title">title</h5>
+                        <p class="card-text">about</p>
+                        <a href="project link" class="btn-custom">View on GitHub</a>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+     </div>
+     
+        </section>
+
+
+     <!-- Contact Section -->
+        <section id="contact" class="py-5 contact-section">
+        <div class="container text-center">
+        <h2 class="section-title">Contact Me</h2>
+        <p class="mt-3 description">Feel free to reach out for collaboration or job opportunities.</p>
+        <p class="contact-info">
+            Email: <a href="mailto:mustaphaosamasaqr@gmail.com" class="contact-link">mustaphaosamasaqr@gmail.com</a>
+        </p>
+        <p class="contact-info">
+            LinkedIn: <a href="https://www.linkedin.com/in/mustapha-osama-saqr/" class="contact-link">linkedin.com/in/mustapha-osama-saqr</a>
+        </p>
+        <p class="contact-info">
+            GitHub: <a href="https://github.com/mustaphasaqr" class="contact-link">github.com/mustaphasaqr</a>
+        </p>
+        <p class="contact-info">
+            Phone: <a href="tel:+201040430713" class="contact-link">+201040430713</a>
+        </p>
+    </p>
+        <p class="contact-info">
+            MY CV: <a href="https://drive.google.com/file/d/1POyu7rZ3gal46U_q3QwN5f0thJCD_Mtw/view?usp=sharing" class="contact-link">Mustapha Osama Saqr-CV</a>
+        </p>
+        </div>
+     </section>
+
+
+      <!-- Footer -->
+      <footer class="footer">
+      <p>&copy; 2024 Mustapha Osama Saqr. Designed with passion and precision.</p>
+        </footer>
+
+
+
+    </body>
+
+</html>
+
